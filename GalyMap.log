@@ -1,0 +1,203 @@
+2024/11/09 00:18:39 Application started
+2024/11/09 00:18:39 Application started.
+2024/11/09 00:18:39 Configuration loaded: &{PerformanceMode:1 FpsCap:60 GameWindowId:D2R Window Debug:false}
+2024/11/09 00:18:39 Initializing GDI+...
+2024/11/09 00:18:39 GDI+ successfully initialized.
+2024/11/09 00:18:39 GDI+ successfully initialized.
+2024/11/09 00:18:42 Player is currently in-game.
+2024/11/09 00:18:42 Player unit pointer is null.
+2024/11/09 00:18:42 Scanning for new player pointer 0, starting default offset 36462736
+2024/11/09 00:18:42 base address: 0x7ff6db9a0000
+2024/11/09 00:18:42 unit table offset: 0x22c6090
+2024/11/09 00:18:42 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:42 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:42 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:42 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:42 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:42 base address: 0x7ff6db9a0000
+2024/11/09 00:18:42 unit table offset: 0x22c6090
+2024/11/09 00:18:42 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:42 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:42 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:42 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:42 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:42 base address: 0x7ff6db9a0000
+2024/11/09 00:18:42 unit table offset: 0x22c6090
+2024/11/09 00:18:42 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:42 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:42 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:42 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:42 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:42 base address: 0x7ff6db9a0000
+2024/11/09 00:18:42 unit table offset: 0x22c6090
+2024/11/09 00:18:42 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:42 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:42 UpdateLayeredWindow failed with error code: A: 0, B: 4154334000000000, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:42 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:42 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:42 base address: 0x7ff6db9a0000
+2024/11/09 00:18:42 unit table offset: 0x22c6090
+2024/11/09 00:18:42 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:42 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:42 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:42 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:42 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:42 base address: 0x7ff6db9a0000
+2024/11/09 00:18:42 unit table offset: 0x22c6090
+2024/11/09 00:18:42 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:42 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:42 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:42 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:42 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:42 base address: 0x7ff6db9a0000
+2024/11/09 00:18:42 unit table offset: 0x22c6090
+2024/11/09 00:18:42 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:42 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:42 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:42 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:42 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:42 base address: 0x7ff6db9a0000
+2024/11/09 00:18:42 unit table offset: 0x22c6090
+2024/11/09 00:18:42 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:42 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:42 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:42 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:42 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:42 base address: 0x7ff6db9a0000
+2024/11/09 00:18:42 unit table offset: 0x22c6090
+2024/11/09 00:18:42 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:42 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:42 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:42 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:42 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:42 base address: 0x7ff6db9a0000
+2024/11/09 00:18:42 unit table offset: 0x22c6090
+2024/11/09 00:18:42 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:42 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:42 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:42 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:42 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:42 base address: 0x7ff6db9a0000
+2024/11/09 00:18:42 unit table offset: 0x22c6090
+2024/11/09 00:18:42 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:42 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:42 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:42 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:42 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:42 base address: 0x7ff6db9a0000
+2024/11/09 00:18:42 unit table offset: 0x22c6090
+2024/11/09 00:18:42 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:42 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:42 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:42 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:42 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:42 base address: 0x7ff6db9a0000
+2024/11/09 00:18:42 unit table offset: 0x22c6090
+2024/11/09 00:18:42 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:42 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:42 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:43 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:43 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:43 base address: 0x7ff6db9a0000
+2024/11/09 00:18:43 unit table offset: 0x22c6090
+2024/11/09 00:18:43 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:43 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:43 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:43 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:43 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:43 base address: 0x7ff6db9a0000
+2024/11/09 00:18:43 unit table offset: 0x22c6090
+2024/11/09 00:18:43 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:43 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:43 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:43 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:43 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:43 base address: 0x7ff6db9a0000
+2024/11/09 00:18:43 unit table offset: 0x22c6090
+2024/11/09 00:18:43 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:43 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:43 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:43 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:43 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:43 base address: 0x7ff6db9a0000
+2024/11/09 00:18:43 unit table offset: 0x22c6090
+2024/11/09 00:18:43 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:43 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:43 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:43 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:43 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:43 base address: 0x7ff6db9a0000
+2024/11/09 00:18:43 unit table offset: 0x22c6090
+2024/11/09 00:18:43 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:43 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:43 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:43 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:43 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:43 base address: 0x7ff6db9a0000
+2024/11/09 00:18:43 unit table offset: 0x22c6090
+2024/11/09 00:18:43 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:43 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:43 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:43 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:43 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:43 base address: 0x7ff6db9a0000
+2024/11/09 00:18:43 unit table offset: 0x22c6090
+2024/11/09 00:18:43 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:43 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:43 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:43 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:43 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:43 base address: 0x7ff6db9a0000
+2024/11/09 00:18:43 unit table offset: 0x22c6090
+2024/11/09 00:18:43 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:43 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:43 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:43 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:43 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:43 base address: 0x7ff6db9a0000
+2024/11/09 00:18:43 unit table offset: 0x22c6090
+2024/11/09 00:18:43 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:43 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:43 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:43 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:43 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:43 base address: 0x7ff6db9a0000
+2024/11/09 00:18:43 unit table offset: 0x22c6090
+2024/11/09 00:18:43 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:43 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:43 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:43 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:43 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:43 base address: 0x7ff6db9a0000
+2024/11/09 00:18:43 unit table offset: 0x22c6090
+2024/11/09 00:18:43 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:43 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:43 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:43 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:43 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:43 base address: 0x7ff6db9a0000
+2024/11/09 00:18:43 unit table offset: 0x22c6090
+2024/11/09 00:18:43 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:43 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:43 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:43 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:43 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:43 base address: 0x7ff6db9a0000
+2024/11/09 00:18:43 unit table offset: 0x22c6090
+2024/11/09 00:18:43 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:43 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:43 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:43 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:43 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:43 base address: 0x7ff6db9a0000
+2024/11/09 00:18:43 unit table offset: 0x22c6090
+2024/11/09 00:18:43 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:43 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:43 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
+2024/11/09 00:18:43 Error reading act address at 0x26379A008: failed to assert type at 26379a008
+2024/11/09 00:18:43 Scanning for new player pointer 10258849768, starting default offset 36462736
+2024/11/09 00:18:43 base address: 0x7ff6db9a0000
+2024/11/09 00:18:43 unit table offset: 0x22c6090
+2024/11/09 00:18:43 unit table address: 0x7ff6ddc66090
+2024/11/09 00:18:43 UpdateLayeredWindow failed: The parameter is incorrect.
+2024/11/09 00:18:43 UpdateLayeredWindow failed with error code: A: 0, B: 0, C: 546865206f7065726174696f6e20636f6d706c65746564207375636365737366756c6c792e
