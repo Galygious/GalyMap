@@ -1,0 +1,21 @@
+// config/nips/testfilter.nip
+
+// ##### Helms #########################
+[Name] == SkullCap && [Quality] == unique # [ItemMagicBonus] >= 50 // Tarnhelm
+[Name] == Mask && [Quality] == unique # [Defense] >= 52 // The Face of Horror
+[Name] == BoneHelm && [Quality] == unique # [Defense] >= 36 // Wormskull
+
+[Name] == WarHat && [Quality] == unique # [hpregen] >= 12 // Peasant Crown
+[Name] == Sallet && [Quality] == unique # [Defense] >= 201 && [FireResist] >= 50 && [LightResist] >= 40 && [ColdResist] >= 40 // Rockstopper
+[Name] == WingedHelm && [Quality] == unique // Valkyrie Wing
+[Name] == DeathMask && [Quality] == unique // Blackthorn's Face
+[Name] == GrandCrown && [Quality] == unique # [ItemGoldBonus] >= 100 // Crown of Thieves
+[Name] == GrimHelm && [Quality] == unique // Vampire Gaze
+
+[Name] == Shako && [Quality] == unique // Harlequin Crest
+[Name] == Armet && [Quality] == unique # [itemabsorbfire] >= 11 // Steel Shade
+[Name] == SpiredHelm && [Quality] == unique # [PassiveColdMastery] >= 8 && [Dexterity] >= 10 // Nightwing's Veil
+[Name] == SpiredHelm && [Quality] == unique # [Strength] >= 15 // Veil of Steel
+[Name] == Demonhead && [Quality] == unique // Andariel's Visage
+[Name] == BoneVisage && [Quality] == unique // Giant Skull
+[Name] == Corona && [Quality] == unique // Crown of ages

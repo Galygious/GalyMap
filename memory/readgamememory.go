@@ -1,3 +1,4 @@
+// memory/readgamememory.go
 package memory
 
 import (
@@ -10,15 +11,15 @@ import (
 var (
 	lastdwInitSeedHash1 uint32
 	lastdwInitSeedHash2 uint32
-	lastdwEndSeedHash1  uint32
-	xorkey              uint32
-	playerLevel         uint32
-	experience          uint32
-	modRustDecrypt      = syscall.NewLazyDLL("rustdecrypt.dll")
-	procGetSeed         = modRustDecrypt.NewProc("get_seed")
-	partyList           []utils.Player
-	lastHoveredType     uint32
-	lastHoveredUnitId   uint32
+	// lastdwEndSeedHash1  uint32
+	// xorkey              uint32
+	playerLevel       uint32
+	experience        uint32
+	modRustDecrypt    = syscall.NewLazyDLL("rustdecrypt.dll")
+	procGetSeed       = modRustDecrypt.NewProc("get_seed")
+	partyList         []globals.Player
+	lastHoveredType   uint32
+	lastHoveredUnitId uint32
 )
 
 func ReadGameMemory(d2r *utils.ClassMemory, settings map[string]bool) {
@@ -162,13 +163,17 @@ func ReadGameMemory(d2r *utils.ClassMemory, settings map[string]bool) {
 	utils.IfError(err, "Failed to read yPosOffset")
 	yPosint, err := utils.ReadBufferAndAssert[uint16](pathBuffer, 0x06, "UShort")
 	utils.IfError(err, "Failed to read yPos")
-	xPos := float64(xPosint) + float64(xPosOffset)/65536.0
-	yPos := float64(yPosint) + float64(yPosOffset)/65536.0
+	xPos := float64(xPosint) + (float64(xPosOffset) / 65536.0)
+	yPos := float64(yPosint) + (float64(yPosOffset) / 65536.0)
 
 	if xPos == 0 {
 		log.Printf("Did not find player position at player offset %v", globals.Offsets.M["unitTable"])
 	}
 
+	globals.GameDataMutex.Lock()
+	defer globals.GameDataMutex.Unlock()
+
+	globals.GameMemoryData = make(map[string]interface{})
 	globals.GameMemoryData["playerPointer"] = playerPointer
 	globals.GameMemoryData["pathAddress"] = pathAddress
 	// globals.GameMemoryData["gameName"] = gameName

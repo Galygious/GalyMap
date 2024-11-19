@@ -1,6 +1,5 @@
-// utils/structs.go
-
-package utils
+// globals/structs.go
+package globals
 
 type UnitPosition struct {
 	X float64
@@ -42,6 +41,7 @@ type Mob struct {
 	IsHovered      bool
 	MobType        uint32
 	DwOwnerId      uint32
+	IsCorpse       bool
 }
 
 // Immunities represents the various immunities a Mob can have.
@@ -77,4 +77,17 @@ type ProcessInfo struct {
 	PID     uint32
 	ExeName string
 	Title   string
+	Windows []WindowInfo // Added field to store window information
+}
+
+// WindowInfo holds the position and size of a window
+type WindowInfo struct {
+	Handle uintptr
+	Title  string
+	Left   int32
+	Top    int32
+	Right  int32
+	Bottom int32
+	Width  int32
+	Height int32
 }

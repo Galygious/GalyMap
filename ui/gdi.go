@@ -1,3 +1,5 @@
+// ui/gdi.go
+
 package ui
 
 import (

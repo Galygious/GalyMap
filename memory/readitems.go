@@ -13,6 +13,9 @@ func ReadItems(d2r *utils.ClassMemory, startingOffset uintptr, itemAlertList map
 	unitTableBuffer, err := d2r.ReadRaw(baseAddress, 128*8)
 	utils.IfError(err, "Failed to read unit table buffer")
 
+	// Clear items
+	globals.Items = make([]types.Item, 0)
+
 	// log.Printf("Beginning item read loop")
 	for i := 0; i < 128; i++ {
 		// log.Printf("Reading item %d", i)

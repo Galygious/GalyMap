@@ -8,7 +8,7 @@ import (
 
 // ReadObjects reads objects from the game process and updates the global gameObjects list
 func ReadObjects(d2r *utils.ClassMemory, startingOffset int, currentHoveringUnitId uint32, levelNo int) {
-	globals.GameObjects = []utils.Object{} // Initialize the global gameObjects list
+	globals.GameObjects = []globals.Object{} // Initialize the global gameObjects list
 
 	baseAddress := d2r.BaseAddress + uintptr(startingOffset) + (2 * 1024)
 	unitTableBuffer, err := d2r.ReadRaw(baseAddress, 128*8)
@@ -68,7 +68,7 @@ func ReadObjects(d2r *utils.ClassMemory, startingOffset int, currentHoveringUnit
 						ownerName = utils.ReadNullTerminatedString(ownerNameBuffer)
 					}
 
-					gameObject := utils.Object{
+					gameObject := globals.Object{
 						TxtFileNo:    txtFileNo,
 						Name:         name,
 						Mode:         mode,
@@ -80,7 +80,7 @@ func ReadObjects(d2r *utils.ClassMemory, startingOffset int, currentHoveringUnit
 						InteractType: interactType,
 						IsShrine:     isShrine,
 						ShrineType:   shrineType,
-						Pos:          utils.ObjectPosition{X: x, Y: y},
+						Pos:          globals.ObjectPosition{X: x, Y: y},
 						LevelNo:      levelNo,
 						UnitID:       unitId,
 						ShrineFlag:   shrineFlag,

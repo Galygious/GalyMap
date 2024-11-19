@@ -23,6 +23,7 @@ var (
 	hInstance       win.HINSTANCE
 )
 
+// ShowProcessSelectionWindow displays a window for process selection
 func ShowProcessSelectionWindow(hInst win.HINSTANCE) (*memory.Process, error) {
 	hInstance = hInst
 

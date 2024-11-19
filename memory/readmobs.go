@@ -11,8 +11,8 @@ import (
 func ReadMobs(d2r *utils.ClassMemory, startingOffset uintptr, currentHoveringUnitId uint32) {
 
 	// log.Printf("Reading mobs")
-	globals.Mobs = []utils.Mob{}     // Initialize the global mobs list
-	globals.HoveredMob = utils.Mob{} // Initialize the global hoveredMob
+	globals.Mobs = []globals.Mob{}     // Initialize the global mobs list
+	globals.HoveredMob = globals.Mob{} // Initialize the global hoveredMob
 
 	baseAddress := d2r.BaseAddress + startingOffset + 1024
 	unitTableBuffer, err := d2r.ReadRaw(baseAddress, 128*8)
@@ -48,6 +48,9 @@ func ReadMobs(d2r *utils.ClassMemory, startingOffset uintptr, currentHoveringUni
 				utils.IfError(err, "Failed to read isUnique")
 				monsterFlag, err := utils.ReadAndAssert[uint8](d2r, uintptr(pUnitData+0x1A), "UChar")
 				utils.IfError(err, "Failed to read monsterFlag")
+				Corpseint, err := utils.ReadAndAssert[uint8](d2r, uintptr(pUnitData+0x1A6), "UInt")
+				utils.IfError(err, "Failed to read isCorpse")
+				isCorpse := Corpseint == 1
 
 				// Read data from pPath
 				pathStructData, err := d2r.ReadRaw(uintptr(pPath), 16)
@@ -97,7 +100,7 @@ func ReadMobs(d2r *utils.ClassMemory, startingOffset uintptr, currentHoveringUni
 				isTownNPC := isTownNPC(txtFileNo)
 				hp := uint32(0)
 				maxhp := uint32(0)
-				immunities := utils.Immunities{}
+				immunities := globals.Immunities{}
 
 				if !isPlayerMinion {
 					// Read stats
@@ -137,10 +140,10 @@ func ReadMobs(d2r *utils.ClassMemory, startingOffset uintptr, currentHoveringUni
 					}
 				}
 
-				mob := utils.Mob{
+				mob := globals.Mob{
 					TxtFileNo:      txtFileNo,
 					Mode:           mode,
-					Pos:            utils.UnitPosition{X: monxFloat, Y: monyFloat},
+					Pos:            globals.UnitPosition{X: monxFloat, Y: monyFloat},
 					IsUnique:       isUnique,
 					IsBoss:         isBoss,
 					MonsterFlag:    monsterFlag,
@@ -153,6 +156,7 @@ func ReadMobs(d2r *utils.ClassMemory, startingOffset uintptr, currentHoveringUni
 					IsHovered:      isHovered,
 					DwOwnerId:      dwOwnerId,
 					MobType:        mobType,
+					IsCorpse:       isCorpse,
 				}
 
 				if isHovered {

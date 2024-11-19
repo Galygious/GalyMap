@@ -31,11 +31,12 @@ func CheckPlayerPointer(d2r *utils.ClassMemory, playerUnit uintptr) bool {
 
 	// Read actAddress
 	pAct := playerUnit + 0x20
-	actAddress, err := utils.ReadAndAssert[uintptr](d2r, pAct, "Int64")
-	if err != nil || actAddress == 0 {
+	actAddressUInt64, err := utils.ReadAndAssert[uint64](d2r, pAct, "UInt64")
+	if err != nil || actAddressUInt64 == 0 {
 		log.Printf("Error reading act address at 0x%X: %v", pAct, err)
 		return false
 	}
+	actAddress := uintptr(actAddressUInt64)
 
 	// Read mapSeed
 	mapSeedAddress := actAddress + 0x1C
@@ -49,7 +50,7 @@ func CheckPlayerPointer(d2r *utils.ClassMemory, playerUnit uintptr) bool {
 	pPath := playerUnit + 0x38
 	pathAddress, err := utils.ReadAndAssert[uintptr](d2r, pPath, "Int64")
 	if err != nil || pathAddress == 0 {
-		log.Printf("Error reading path address at 0x%X: %v", pPath, err)
+		log.Printf("Error reading path address at 0x%X: %v", pathAddress, err)
 		return false
 	}
 

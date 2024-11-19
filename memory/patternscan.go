@@ -3,12 +3,9 @@ package memory
 import (
 	"GalyMap/globals"
 	"GalyMap/utils"
-	// "log"
 )
 
 func PatternScan(d2r *utils.ClassMemory) error {
-	globals.Offsets.Lock()
-	defer globals.Offsets.Unlock()
 
 	// unit table
 	unitPattern := "48 03 C7 49 8B 8C C6"

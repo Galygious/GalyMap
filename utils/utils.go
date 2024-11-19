@@ -1,6 +1,10 @@
+// utils/utils.go
+
 package utils
 
 import (
+	"GalyMap/globals"
+	"GalyMap/types"
 	"fmt"
 	"golang.org/x/sys/windows"
 	"log"
@@ -47,6 +51,7 @@ func ReadAndAssert[T any](d2r *ClassMemory, addr uintptr, dataType string, sizeB
 		"Double": true,
 		"Int64":  true,
 		"String": true,
+		"UInt64": true,
 	}
 
 	if !validDataTypes[dataType] {
@@ -160,4 +165,63 @@ func FindWindow(title string) (windows.HWND, error) {
 	}
 
 	return windows.HWND(hwnd), nil
+}
+
+// GetPlayerPosition retrieves the player's position from GameMemoryData.
+func GetPlayerPosition() (globals.UnitPosition, error) {
+	globals.GameDataMutex.RLock()
+	defer globals.GameDataMutex.RUnlock()
+
+	x, okX := globals.GameMemoryData["xPos"].(float64)
+	y, okY := globals.GameMemoryData["yPos"].(float64)
+	if !okX || !okY {
+		return globals.UnitPosition{}, fmt.Errorf("player position data missing or invalid")
+	}
+
+	return globals.UnitPosition{X: x, Y: y}, nil
+}
+
+// GetMobs retrieves the list of mobs from GameMemoryData.
+func GetMobs() ([]globals.Mob, error) {
+	globals.GameDataMutex.RLock()
+	defer globals.GameDataMutex.RUnlock()
+
+	mobs, ok := globals.GameMemoryData["mobs"].([]globals.Mob)
+	if !ok {
+		return nil, fmt.Errorf("mobs data missing or invalid")
+	}
+
+	return mobs, nil
+}
+
+// isUIOpen retrieves the menuShown value from GameMemoryData.
+func IsUIOpen() (bool, error) {
+	globals.GameDataMutex.RLock()
+	defer globals.GameDataMutex.RUnlock()
+
+	menuShown, ok := globals.GameMemoryData["menuShown"].(bool)
+	if !ok {
+		return false, fmt.Errorf("menuShown data missing or invalid")
+	}
+
+	return menuShown, nil
+}
+
+// getItems retrieves the list of items from GameMemoryData.
+func GetItems() ([]types.Item, error) {
+	globals.GameDataMutex.RLock()
+	defer globals.GameDataMutex.RUnlock()
+
+	items, ok := globals.GameMemoryData["items"].([]types.Item)
+	if !ok {
+		return nil, fmt.Errorf("items data missing or invalid")
+	}
+
+	return items, nil
+}
+
+// ItemFilter returns true or false base on whether the item meets item filter criteria.
+func ItemFilter(item types.Item) bool {
+	fmt.Println("ItemFilter: ", item.Name)
+	return false
 }

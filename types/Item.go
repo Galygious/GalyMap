@@ -1,10 +1,21 @@
+// types/Item.go
 package types
+
+import (
+	"github.com/hectorgimenez/d2go/pkg/data"
+	HGItem "github.com/hectorgimenez/d2go/pkg/data/item"
+	"github.com/hectorgimenez/d2go/pkg/nip"
+
+	"fmt"
+	"image"
+	"time"
+)
 
 // Item struct to represent an item
 type Item struct {
 	TxtFileNo     int
 	ItemCode      string
-	QualityNo     int
+	QualityNo     QualityNo
 	Name          string
 	LocalizedName string
 	PrefixName    string
@@ -29,6 +40,34 @@ type Item struct {
 	Repaired      bool
 	FlagsText     string
 }
+
+// Define a footprint for each item that uniquely identifies it
+type ItemFootprint struct {
+	DetectedAt time.Time
+	Area       uint32
+	Position   image.Point
+	Name       string
+	Quality    QualityNo
+}
+
+func (fp *ItemFootprint) Match(area uint32, item Item) bool {
+	return fp.Area == area && fp.Position == image.Point{X: item.ItemX, Y: item.ItemY} && fp.Name == item.Name && fp.Quality == item.QualityNo
+}
+
+var (
+	NipRules nip.Rules
+)
+
+func LoadNipRules(nipsFolderPath string) error {
+	rules, err := nip.ReadDir(nipsFolderPath)
+	if err != nil {
+		return err
+	}
+	NipRules = rules
+	return nil
+}
+
+type QualityNo int
 
 // Flag constants representing item properties
 const (
@@ -57,11 +96,45 @@ const (
 	IFLAG_ITEM         uint32 = 0x08000000
 )
 
+const (
+	QualityLowQuality QualityNo = 0x01
+	QualityNormal     QualityNo = 0x02
+	QualitySuperior   QualityNo = 0x03
+	QualityMagic      QualityNo = 0x04
+	QualitySet        QualityNo = 0x05
+	QualityRare       QualityNo = 0x06
+	QualityUnique     QualityNo = 0x07
+	QualityCrafted    QualityNo = 0x08
+)
+
+func (q QualityNo) ToString() string {
+	switch q {
+	case QualityLowQuality:
+		return "LowQuality"
+	case QualityNormal:
+		return "Normal"
+	case QualitySuperior:
+		return "Superior"
+	case QualityMagic:
+		return "Magic"
+	case QualitySet:
+		return "Set"
+	case QualityRare:
+		return "Rare"
+	case QualityUnique:
+		return "Unique"
+	case QualityCrafted:
+		return "Crafted"
+	}
+
+	return "UnknownItemQuality"
+}
+
 // NewItem function to initialize an Item
 func NewItem(txtFileNo int, qualityNo int, uniqueOrSetId int) *Item {
 	item := &Item{
 		TxtFileNo:     txtFileNo,
-		QualityNo:     qualityNo,
+		QualityNo:     QualityNo(qualityNo),
 		UniqueOrSetId: uniqueOrSetId,
 	}
 
@@ -199,6 +272,102 @@ func (item *Item) SetIsQuestItem(txtFileNo int) {
 
 func (item *Item) SetItemBaseName(txtFileNo int) {
 	item.BaseName = GetItemBaseName(txtFileNo)
+}
+
+func (item *Item) ToDataItem() data.Item {
+	fmt.Printf("Converting item to data item\n")
+	fmt.Printf("TxtFileNo: %d\n", item.TxtFileNo)
+	fmt.Printf("ItemCode: %s\n", item.ItemCode)
+	fmt.Printf("QualityNo: %d\n", item.QualityNo)
+	fmt.Printf("Name: %s\n", item.Name)
+	fmt.Printf("LocalizedName: %s\n", item.LocalizedName)
+	fmt.Printf("PrefixName: %s\n", item.PrefixName)
+	fmt.Printf("ItemLoc: %d\n", item.ItemLoc)
+	fmt.Printf("Quality: %s\n", item.Quality)
+	fmt.Printf("ItemX: %d\n", item.ItemX)
+	fmt.Printf("ItemY: %d\n", item.ItemY)
+	fmt.Printf("IsSocketed: %t\n", item.IsSocketed)
+	fmt.Printf("NumSockets: %d\n", item.NumSockets)
+	fmt.Printf("StatCount: %d\n", item.StatCount)
+	fmt.Printf("InStore: %t\n", item.InStore)
+	fmt.Printf("Identified: %t\n", item.Identified)
+	fmt.Printf("Ethereal: %t\n", item.Ethereal)
+	fmt.Printf("UniqueOrSetId: %d\n", item.UniqueOrSetId)
+	fmt.Printf("IsQuestItem: %t\n", item.IsQuestItem)
+	fmt.Printf("BaseName: %s\n", item.BaseName)
+	fmt.Printf("StatPtr: %d\n", item.StatPtr)
+	fmt.Printf("StatExPtr: %d\n", item.StatExPtr)
+	fmt.Printf("StatExCount: %d\n", item.StatExCount)
+	fmt.Printf("Runeword: %t\n", item.Runeword)
+	fmt.Printf("Broken: %t\n", item.Broken)
+	fmt.Printf("Repaired: %t\n", item.Repaired)
+	fmt.Printf("FlagsText: %s\n", item.FlagsText)
+	return data.Item{
+		ID:         item.TxtFileNo,
+		Name:       HGItem.Name(GetItemBaseName(item.TxtFileNo)),
+		Quality:    itemQualityToDataQuality(item.Quality),
+		Ethereal:   item.Ethereal,
+		Identified: item.Identified,
+		// Stats:      item.ToStatData(),
+		// Add other necessary fields
+	}
+}
+
+func itemQualityToDataQuality(q string) HGItem.Quality {
+	switch q {
+	case "Inferior":
+		return HGItem.QualityLowQuality
+	case "Normal":
+		return HGItem.QualityNormal
+	case "Superior":
+		return HGItem.QualitySuperior
+	case "Magic":
+		return HGItem.QualityMagic
+	case "Set":
+		return HGItem.QualitySet
+	case "Rare":
+		return HGItem.QualityRare
+	case "Unique":
+		return HGItem.QualityUnique
+	case "Crafted":
+		return HGItem.QualityCrafted
+	default:
+		return HGItem.QualityNormal
+	}
+}
+
+// func (item *Item) ToStatData() []stat.Data {
+// 	stats := []stat.Data{}
+// 	// Map your item's stats to stat.Data
+// 	if item.Defense != 0 {
+// 		stats = append(stats, stat.Data{ID: stat.Defense, Value: item.Defense})
+// 	}
+// 	if item.Strength != 0 {
+// 		stats = append(stats, stat.Data{ID: stat.Strength, Value: item.Strength})
+// 	}
+// 	// Add other stats as necessary
+// 	return stats
+// }
+
+// filter applies filters from all nip files in the nips folder and returns true if the item passes any filter.
+func (item *Item) Filter() bool {
+	dataItem := item.ToDataItem()
+	_, result := NipRules.EvaluateAll(dataItem)
+
+	switch result {
+	case nip.RuleResultFullMatch:
+		// The item fully matches a rule
+		return true
+	case nip.RuleResultPartial:
+		// The item partially matches a rule (e.g., unidentified items)
+		// You can decide how to handle partial matches
+		return true
+	case nip.RuleResultNoMatch:
+		// The item does not match any rule
+		return false
+	default:
+		return false
+	}
 }
 
 func (item *Item) CalculateFlags(flags uint32) string {

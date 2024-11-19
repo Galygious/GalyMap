@@ -11,8 +11,8 @@ import (
 // - startingOffset: the offset from the base address to start reading.
 // - levelNo: the current level number (not used in this function).
 // - partyList: a list of players in the party.
-func ReadOtherPlayers(d2r *utils.ClassMemory, startingOffset uintptr, levelNo int, partyList []utils.Player) {
-	globals.OtherPlayers = []utils.Player{}
+func ReadOtherPlayers(d2r *utils.ClassMemory, startingOffset uintptr, levelNo int, partyList []globals.Player) {
+	globals.OtherPlayers = []globals.Player{}
 
 	baseAddress := d2r.BaseAddress + startingOffset
 	unitTableBuffer, err := d2r.ReadRaw(baseAddress, 128*8)
@@ -36,7 +36,7 @@ func ReadOtherPlayers(d2r *utils.ClassMemory, startingOffset uintptr, levelNo in
 
 	for _, partyPlayer := range partyList {
 		if !existingPlayers[partyPlayer.UnitId] && partyPlayer.Area == uint32(levelNo) {
-			globals.OtherPlayers = append(globals.OtherPlayers, utils.Player{
+			globals.OtherPlayers = append(globals.OtherPlayers, globals.Player{
 				Name:       partyPlayer.Name,
 				UnitId:     partyPlayer.UnitId,
 				Pos:        partyPlayer.Pos,
@@ -77,10 +77,10 @@ func processPlayerUnits(d2r *utils.ClassMemory, playerUnitAddress int64, playerI
 			isCorpse := isCorpseValue == 1
 
 			if xPosFloat > 1 && yPosFloat > 1 {
-				globals.OtherPlayers = append(globals.OtherPlayers, utils.Player{
+				globals.OtherPlayers = append(globals.OtherPlayers, globals.Player{
 					Name:       playerName,
 					UnitId:     unitID,
-					Pos:        utils.UnitPosition{X: xPosFloat, Y: yPosFloat},
+					Pos:        globals.UnitPosition{X: xPosFloat, Y: yPosFloat},
 					IsCorpse:   isCorpse,
 					Player:     playerIndex + 1,
 					PlayerName: playerName,

@@ -34,7 +34,7 @@ var (
 		"UShort": 2, "Short": 2,
 		"UInt": 4, "Int": 4,
 		"Float": 4, "Double": 8,
-		"Int64": 8,
+		"Int64": 8, "UInt64": 8,
 	}
 	aRights = map[string]uint32{
 		"PROCESS_ALL_ACCESS":                0x001F0FFF,
@@ -337,6 +337,10 @@ func (cm *ClassMemory) Read(address uintptr, dataType string, offsets ...uintptr
 		return val, err
 	case "Int64":
 		var val int64
+		err = binary.Read(reader, binary.LittleEndian, &val)
+		return val, err
+	case "UInt64":
+		var val uint64
 		err = binary.Read(reader, binary.LittleEndian, &val)
 		return val, err
 	default:

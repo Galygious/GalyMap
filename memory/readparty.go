@@ -48,13 +48,13 @@ func ReadParty(d2r *utils.ClassMemory, playerUnitId uint32) {
 		// 	}
 		// }
 
-		player := utils.Player{
+		player := globals.Player{
 			Name:              name,
 			UnitId:            unitId,
 			Area:              area,
 			PartyId:           partyId,
 			Plevel:            plevel,
-			Pos:               utils.UnitPosition{X: float64(xPos), Y: float64(yPos)},
+			Pos:               globals.UnitPosition{X: float64(xPos), Y: float64(yPos)},
 			IsHostileToPlayer: isHostileToPlayer,
 		}
 
